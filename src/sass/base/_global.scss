@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  color: $primaryColor;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.04em;
+  background-color: $primaryColor;
+}
+
+body.mobile-menu-open {
+  @include media-size(tablet-1) {
+    overflow: hidden;
+  }
+}
+
+* {
+  outline-color: $extitleColor;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+  margin: -1px;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.link {
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* ширина в макеті 1170пікс + по 15пікс по півгаттера справа та зліва, щоб текст не прилипав до краю */
+.container {
+  margin: 0 auto;
+
+  @include media-size(min-mobile) {
+    width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include media-size(min-tablet) {
+    width: 768px;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+  @include media-size(min-desktop) {
+    width: 1200px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  font-family: Titan One;
+  margin-bottom: 31px;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $titleColor;
+
+  @include media-size(min-tablet) {
+    margin-bottom: 39px;
+    font-size: 48px;
+    line-height: 1.15;
+  }
+
+  @include media-size(min-desktop) {
+    margin-bottom: 49px;
+    font-size: 58px;
+    line-height: 1.14;
+  }
+}
+
+.title__label {
+  font-size: 18px;
+  line-height: 1.166;
+  color: $extitleColor;
+
+  @include media-size(min-tablet) {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  @include media-size(min-desktop) {
+    font-size: 30px;
+    line-height: 1.13;
+  }
+}

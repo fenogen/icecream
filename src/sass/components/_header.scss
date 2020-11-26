@@ -1,0 +1,233 @@
+/* ----------HEADER----------- */
+.header {
+  position: absolute;
+  z-index: 900;
+  width: 100%;
+  top: 0;
+  right: 0;
+
+  @include media-size(tablet-1) {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  @include media-size(min-tablet-desktop-1) {
+    padding-top: 37px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include media-size(tablet-1) {
+      max-width: 450px;
+    }
+
+    @include media-size(min-tablet-desktop-1) {
+      max-width: 848px;
+    }
+
+    @include media-size(min-desktop) {
+      max-width: 1280px;
+    }
+  }
+}
+/* ----------HEADER----------- */
+/* ----------MENU NAV div----------- */
+.menu-block {
+  display: flex;
+  @include media-size(tablet-1) {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @include media-size(min-tablet) {
+    justify-content: space-between;
+  }
+
+  @include media-size(min-desktop) {
+    align-items: center;
+  }
+
+  body.mobile-menu-open & {
+    pointer-events: auto;
+    opacity: 1;
+    background-color: $menuBgColor;
+    @include transition(opacity, 250ms, 0ms); //працює на відкриття меню
+
+    @include media-size(min-tablet-desktop-1) {
+      position: fixed;
+      width: 254px;
+      top: 0;
+      right: 0;
+
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+    }
+  }
+  /* -----------------MENU NAV div------------------ */
+  /* -----------------button BUY NOW------------------ */
+  .buttons-with-icon {
+    @include media-size(min-desktop) {
+      margin-left: 110px;
+    }
+
+    body.mobile-menu-open & {
+      @include media-size(desktop-1) {
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 186px;
+      }
+      @include media-size(tablet-1) {
+        width: 209px;
+      }
+    }
+  }
+}
+/* -----------------button BUY NOW------------------ */
+/* -----------NAVIGATION UL LIST------------------ */
+.header__nav {
+  @include media-size(desktop-1) {
+    body.mobile-menu-close & {
+      transform: translateX(100%);
+      pointer-events: none;
+      visibility: hidden;
+      @include visuallyHidden;
+    }
+
+    body.mobile-menu-open & {
+      transform: translateX(0);
+      @include transition(transform, 250ms, 250ms); //працює на відкриття меню
+    }
+
+    .item {
+      border-bottom: 2px solid #e18298;
+      &:first-child {
+        border-top: 2px solid #e18298;
+      }
+    }
+  }
+
+  @include media-size(min-desktop) {
+    display: flex;
+
+    .item {
+      flex-shrink: 0;
+      &:not(:last-child) {
+        margin-right: 35px;
+      }
+    }
+  }
+
+  .link {
+    display: inline-block;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 24px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+    @include transition(transform);
+
+    @include media-size(min-desktop) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      padding-left: 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: $accentColor;
+      transform: scale(0.9);
+      @include media-size(min-desktop) {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+/* -----------NAVIGATION UL LIST------------------ */
+/* -----------MENU BUTTON close/open------------ */
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  // @include transition(all, 250ms);
+
+  @include media-size(desktop-1) {
+    body.mobile-menu-open & {
+      position: fixed;
+      z-index: 902;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  @include media-size(min-tablet-desktop-1) {
+    body.mobile-menu-close & {
+      margin-right: 30px;
+    }
+  }
+
+  @include media-size(min-desktop) {
+    @include visuallyHidden;
+    visibility: hidden;
+  }
+}
+
+.menu-button__icon {
+  stroke: $accentColor;
+  @include transitionTwoProp(stroke, stroke-width);
+
+  .menu-button:hover &,
+  .menu-button:focus & {
+    stroke: $primaryColor;
+    stroke-width: 2;
+  }
+
+  .icon-close {
+    display: none;
+    body.mobile-menu-open & {
+      display: block;
+    }
+  }
+
+  .icon-open {
+    body.mobile-menu-open & {
+      display: none;
+    }
+  }
+}
+/* -----------MENU BUTTON close/open------------ */
+
+/* бекдроп для меню */
+.wrapper {
+  z-index: 901;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  @include transition(transform);
+}
+
+.animate {
+  transform: translateX(0);
+}

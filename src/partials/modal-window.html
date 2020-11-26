@@ -1,0 +1,89 @@
+<div class="backdrop" data-backdrop>
+  <div class="modal" tabindex="0" data-modal>
+    <h2 class="section-title">Leave your details, we will call you back</h2>
+
+    <button class="modal__close-btn" data-modal-close>
+      <svg class="menu-button__icon" width="14" height="14">
+        <use href="./img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <form autocomplete="on" novalidate data-form-modal>
+      <label class="form-field">
+        <span class="form-text">Name</span>
+        <span class="form__input-wrapper">
+          <input
+            class="form-input"
+            type="text"
+            name="name"
+            required
+          />
+          <svg class="form-icon">
+            <use href="./img/sprite.svg#modal-form-1-name" />
+          </svg>
+        </span>
+      </label>
+
+      <label class="form-field">
+        <span class="form-text">Phone</span>
+        <span class="form__input-wrapper">
+          <input
+            class="form-input"
+            type="tel"
+            name="tel"
+            required
+          />
+          <svg class="form-icon">
+            <use href="./img/sprite.svg#modal-form-2-phone" />
+          </svg>
+        </span>
+      </label>
+
+      <label class="form-field">
+        <span class="form-text">Email</span>
+        <span class="form__input-wrapper">
+          <input
+            class="form-input"
+            type="email"
+            name="email"
+            required
+          />
+          <svg class="form-icon">
+            <use href="./img/sprite.svg#modal-form-3-email" />
+          </svg>
+        </span>
+      </label>
+
+      <label class="form-field">
+        <span class="form-text">Comment</span>
+        <textarea
+          class="form-textarea"
+          name="message"
+          placeholder="Enter text"
+          rows="7"
+        ></textarea>
+      </label>
+
+      <span class="form-checkbox" data-checkbox-label>
+        <input
+          class="form-checkbox__input visually-hidden"
+          type="checkbox"
+          name="checkbox"
+          tabindex="-1"
+          data-checkbox-input
+        />
+        <svg class="checkbox-icon" tabindex="0" data-checkbox-icon>
+          <use href="./img/sprite.svg#modal-checkbox-icon" />
+        </svg>
+        <span class="form__text-checkbox"
+          >I agree to the newsletter and accept
+          <a class="checkbox__text-link" href="javascript: void(0)"
+            >the Terms and Conditions</a
+          >
+        </span>
+      </span>
+
+      <button type="submit" class="buttons button--primary">Send</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,228 @@
+/* модальне вікно */
+.backdrop {
+  position: fixed;
+  z-index: 910;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 93px;
+
+  opacity: 0;
+  pointer-events: none;
+  @include transition(opacity);
+
+  @include media-size(min-desktop) {
+    display: flex;
+    padding-top: 93px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.backdrop.is-open {
+  pointer-events: auto;
+  opacity: 1;
+  @include transition(opacity, 250ms);
+
+  .modal {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  position: relative;
+  max-width: 460px; /*не 450 бо не влазить стрічка з чекбоксом*/
+  padding: 40px;
+  margin: 0 auto;
+
+  border-radius: 20px;
+  background-color: $extitleColor;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: scale(0);
+  @include transition(transform, 250ms);
+
+  & .section-title {
+    margin-left: 15px;
+    margin-bottom: 12px;
+    font-size: 17px;
+    line-height: 1.5;
+
+    @include media-size(min-desktop) {
+      font-size: 20px;
+    }
+  }
+
+  @include media-size(min-desktop) {
+    max-width: 528px;
+    @include transition(transform, 250ms);
+
+    & .section-title {
+      line-height: 1.15;
+    }
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.form__input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-text {
+  margin-bottom: 4px;
+  margin-left: 15px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.form-input {
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 42px;
+  padding-right: 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 20px;
+  color: $thirdColor;
+  @include transition(border);
+}
+
+.form-icon {
+  position: absolute;
+  bottom: 50%;
+  left: 21px;
+
+  width: 18px;
+  height: 18px;
+
+  fill: $extitleColor;
+  transform: translate(-50%, 50%);
+  @include transition(fill);
+
+  .form-input:focus + &,
+  .form-input:hover + & {
+    fill: $thirdColor;
+  }
+}
+
+.form-textarea {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  resize: none;
+
+  color: $thirdColor;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 20px;
+  @include transition(border);
+
+  &::placeholder {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  @include media-size(min-desktop) {
+    align-items: center;
+  }
+}
+
+.checkbox-icon {
+  min-width: 16px;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+
+  background-color: white;
+  fill: $primaryColor;
+  border-radius: 2px;
+  // border: 2px solid $primaryColor;
+  border: 2px solid rgba(33, 33, 33, 0.2);
+  @include transitionTwoProp(border, background-color);
+
+  .form-checkbox:hover & {
+    border: 2px solid $primaryColor;
+  }
+
+  .form-checkbox__input:checked + &,
+  &.checked {
+    border: 0px solid $accentColor;
+    background: $accentColor;
+  }
+}
+
+.border-not-checked {
+  border: 2px solid #d41443;
+}
+
+.form__text-checkbox {
+  font-size: 12px;
+  line-height: 1.17;
+
+  @include media-size(min-desktop) {
+    font-size: 13px;
+    line-height: 1.71;
+  }
+}
+
+.checkbox__text-link {
+  color: $accentColor;
+}
+
+/* кнопка Х - закрити модальне вікно */
+.modal__close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-button__icon {
+  stroke: $primaryColor;
+
+  &:hover,
+  &:focus {
+    stroke: $accentColor;
+  }
+}
+
+.button--primary {
+  display: block;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin: 0 auto;
+}

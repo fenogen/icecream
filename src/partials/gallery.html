@@ -1,0 +1,100 @@
+<section class="section gallery" id="gallery">
+  <!-- Gallery image -->
+  <!-- <div class="container gallery-picture"></div> -->
+    <picture>
+      <source
+        srcset="./img/gallery/gallery2x@mob1x.png 1x,
+                ./img/gallery/gallery2x@mob2x.png 2x"
+        media="(max-width: 767px)"
+      />
+      <source
+        srcset="./img/gallery/gallery2x@tablet1x.png 1x,
+                ./img/gallery/gallery2x@tablet2x.png 2x"
+        media="(min-width: 768px) and (max-width: 1199px)"
+      />
+      <source
+        srcset="./img/gallery/gallery1xdesktop.png 1x,
+                ./img/gallery/gallery2xdesktop.png 2x"
+        media="(min-width: 1200px)"
+      />
+      <img loading="lazy" class="container gallery-image"
+        src="./img/gallery/gallery1xdesktop.png" alt="Gallery"
+        width="1012"
+        data-gallery
+      />
+    </picture>
+
+  <h2 class="gallery-title">Gallery</h2>
+
+  <ul class="container gallery-list list single-item">
+    <li class="gallery-list__item">
+      <div class="gallery-list__picture person1"></div>
+      <div class="gallery-list__wrap">
+        <p class="gallery-list__text">
+          Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam
+          sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis
+          in nibh vel risus.
+        </p>
+      </div>
+
+      <div class="gallery_svg-ellipse">
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+      </div>
+      <p class="gallery-list__name">Emily, Los Angeles</p>
+    </li>
+    <li class="gallery-list__item">
+      <div class="gallery-list__picture person2"></div>
+      <div class="gallery-list__wrap">
+        <p class="gallery-list__text">
+          Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam
+          sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis
+          in nibh vel risus.
+        </p>
+      </div>
+
+      <div class="gallery_svg-ellipse">
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+      </div>
+      <p class="gallery-list__name">Emma, Pennsylvania</p>
+    </li>
+    <li class="gallery-list__item">
+      <div class="gallery-list__picture person3"></div>
+      <div class="gallery-list__wrap">
+        <p class="gallery-list__text">
+          Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam
+          sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis
+          in nibh vel risus.
+        </p>
+      </div>
+
+      <div class="gallery_svg-ellipse">
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+        <svg width="6" height="6">
+          <use href="./img/sprite.svg#icon-ellipse"></use>
+        </svg>
+      </div>
+      <p class="gallery-list__name">Hillary, Boston</p>
+    </li>
+  </ul>
+</section>

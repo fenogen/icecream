@@ -1,0 +1,221 @@
+.card-contact {
+  padding-bottom: 113px;
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+  background-image: linear-gradient($primaryColor 6%, $traditionColor 6%);
+
+  @include media-size(min-tablet) {
+    padding-bottom: 158px;
+    background-image: linear-gradient($primaryColor 9%, $traditionColor 9%);
+  }
+
+  @include media-size(min-desktop) {
+    padding-bottom: 165px;
+    background-image: linear-gradient($primaryColor 12%, $traditionColor 12%);
+  }
+}
+
+/* ----------список карток----------- */
+.card__list {
+  margin-bottom: 54px;
+  margin-left: -30px;
+
+  @include media-size(min-tablet) {
+    display: flex;
+    margin-bottom: 81px;
+  }
+
+  @include media-size(min-desktop) {
+    margin-bottom: 86px;
+  }
+}
+
+.card__item {
+  position: relative;
+  text-align: left;
+  background: $primaryColor;
+  box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
+  border-radius: 24px;
+  padding-top: 42px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 42px;
+
+  @include media-size(min-tablet) {
+    @include itemWidthMargin(3, 20px);
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+  }
+
+  @include media-size(min-desktop) {
+    @include itemWidthMargin(3);
+    padding-top: 52px;
+    padding-left: 44px;
+    padding-right: 44px;
+    padding-bottom: 62px;
+  }
+}
+
+@include media-size(tablet-1) {
+  .card__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.card__item {
+  margin-left: 30px;
+}
+
+/* ----------кінець список карток----------- */
+
+.card__text {
+  margin-bottom: 25px;
+  font-size: 12px;
+  color: $thirdColor;
+  letter-spacing: 0.04em;
+
+  @include media-size(min-tablet) {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @include media-size(min-desktop) {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+%card__title {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  color: $primaryColor;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 28px;
+  padding-right: 28px;
+
+  @include media-size(min-tablet) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.card__title--cafe {
+  @extend %card__title;
+  background-color: #f0d1a5;
+}
+
+.card__title--truck {
+  @extend %card__title;
+  background-color: #c2e297;
+}
+.card__caption {
+  margin-bottom: 32px;
+  color: $secondaryColor;
+}
+
+/* -------графік роботи------- */
+.working-schedule {
+  margin-bottom: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.working-day__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.working-day__text {
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.8;
+  color: $secondaryColor;
+
+  @include media-size(min-tablet) {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @include media-size(min-desktop) {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+.working-day__time {
+  font-size: 12px;
+  line-height: 1.8;
+  color: $extitleColor;
+
+  @include media-size(min-tablet) {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @include media-size(min-desktop) {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+.contact__list {
+  text-align: left;
+}
+
+.contact__link {
+  font-size: 12px;
+  font-style: normal;
+  color: $thirdColor;
+
+  @include media-size(min-tablet) {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @include media-size(min-desktop) {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+/* -------кінець графік роботи------- */
+/* ---------кнопка така то---------- */
+
+.btn-list {
+  @include media-size(min-tablet) {
+    display: inline-flex;
+  }
+}
+
+.btn-list__item {
+  @include media-size(tablet-1) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &:not(:last-child) {
+    @include media-size(tablet-1) {
+      margin-bottom: 10px;
+    }
+    @include media-size(min-tablet) {
+      margin-right: 15px;
+    }
+  }
+
+  .buttons-with-icon,
+  .buttons-with-icon--red {
+    margin: auto;
+    width: 100%;
+  }
+}
